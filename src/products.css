@@ -1,0 +1,155 @@
+
+body {
+    text-align: center;
+    margin: 0; /* Reset default margin */
+    height: 100vh; 
+    display: grid; /* Use flexbox for layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;/* Make sure the body takes full height */
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 100vh;            
+    width: 100vw;   
+    position: fixed; /* Keep it fixed */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Make sure it's on top of everything */
+}
+
+
+.loader {
+    --w: 10ch;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    letter-spacing: var(--w);
+    width: var(--w);
+    overflow: hidden;
+    white-space: nowrap;
+    text-shadow: 
+        calc(-1 * var(--w)) 0, 
+        calc(-2 * var(--w)) 0, 
+        calc(-3 * var(--w)) 0, 
+        calc(-4 * var(--w)) 0,
+        calc(-5 * var(--w)) 0, 
+        calc(-6 * var(--w)) 0, 
+        calc(-7 * var(--w)) 0, 
+        calc(-8 * var(--w)) 0, 
+        calc(-9 * var(--w)) 0;
+    animation: l16 2s infinite;
+}
+
+.loader:before {
+    content: "Loading...";
+}
+
+@keyframes l16 {
+    20% { 
+        text-shadow: 
+            calc(-1 * var(--w)) 0 red, 
+            calc(-2 * var(--w)) 0 red, 
+            calc(-3 * var(--w)) 0 #ffa516, 
+            calc(-4 * var(--w)) 0 #63fff4, 
+            calc(-5 * var(--w)) 0 #63fff4, 
+            calc(-6 * var(--w)) 0 orange, 
+            calc(-7 * var(--w)) 0 green, 
+            calc(-8 * var(--w)) 0 green, 
+            calc(-9 * var(--w)) 0; 
+    }
+    40% { 
+        text-shadow: 
+            calc(-1 * var(--w)) 0 red, 
+            calc(-2 * var(--w)) 0 red, 
+            calc(-3 * var(--w)) 0 #e945e9, 
+            calc(-4 * var(--w)) 0 green, 
+            calc(-5 * var(--w)) 0 green, 
+            calc(-6 * var(--w)) 0 orange, 
+            calc(-7 * var(--w)) 0 green, 
+            calc(-8 * var(--w)) 0 green, 
+            calc(-9 * var(--w)) 0; 
+    }
+    60% { 
+        text-shadow: 
+            calc(-1 * var(--w)) 0 lightblue, 
+            calc(-2 * var(--w)) 0 #e945e9, 
+            calc(-3 * var(--w)) 0 #e945e9, 
+            calc(-4 * var(--w)) 0 green, 
+            calc(-5 * var(--w)) 0 green, 
+            calc(-6 * var(--w)) 0 yellow, 
+            calc(-7 * var(--w)) 0 #ffa516, 
+            calc(-8 * var(--w)) 0 red, 
+            calc(-9 * var(--w)) 0; 
+    }
+    80% { 
+        text-shadow: 
+            calc(-1 * var(--w)) 0 lightblue, 
+            calc(-2 * var(--w)) 0 yellow, 
+            calc(-3 * var(--w)) 0 #63fff4, 
+            calc(-4 * var(--w)) 0 #ffa516, 
+            calc(-5 * var(--w)) 0 red, 
+            calc(-6 * var(--w)) 0 grey, 
+            calc(-7 * var(--w)) 0 #63fff4, 
+            calc(-8 * var(--w)) 0 #63fff4, 
+            calc(-9 * var(--w)) 0; 
+    }
+}
+
+/* Card Styles */
+.card {
+    height: 200px;
+    width: 150px;
+    margin: 5px;
+    background-color: #e9f7f7;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    transition: transform 0.2s, box-shadow 0.2s;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+    height: 40%;
+    width: 100px;
+    object-fit: fill;
+}
+
+.card-body {
+    height: 60%;
+    object-fit: contain;
+    padding-bottom: 3px;
+}
+
+.card-price {
+    color: rgb(39, 211, 39);
+    font-weight: bold;
+}  
+
+.container {
+    margin: 10px;
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap;
+    justify-content: center; /* Stack items vertically */
+    gap: 10px; /* Space between the grid items */
+}
+.search-box{
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+h1{
+    color: #45f8ec;
+    font-weight: 900;
+}
